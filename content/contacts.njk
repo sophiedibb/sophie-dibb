@@ -14,16 +14,59 @@ layout: layouts/base.njk
 	 
 <body>
 
+<p style="text-align:center"> Please complete the form below </p>
+
 <form method="POST" netlify name="contact"> 
-<div class="mb-3">
-  <label for="email" class="form-label">Email address</label>
-  <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+
+<div class="row">
+  <div class="col">
+    <label for="firstname" class="form-label"><span style="color: red">* </span>First Name</label>
+	<input type="text" class="form-control" name="firstname" id="Firstname" aria-label="First name" required>
+  </div>
+  <div class="col">
+    <label for="surname" class="form-label"><span style="color: red">* </span>Surname</label>
+	<input type="text" class="form-control" name="Surname" id="Surname" aria-label="Last name" required> 
+  </div>
 </div>
+
+<div class="form-group">
+        <label for="DOB" class="control-label" >Date of birth</label>
+        <input type="text" class="form-control" id="DOB" name="DOB" placeholder="DD/MM/YYY">
+      </div>
+
 <div class="mb-3">
-  <label for="randomtext" class="form-label">Example textarea</label>
-  <textarea class="form-control" name="randomtext" id="randomtext" rows="3"></textarea>
+  <label for="email" class="form-label"><span style="color: red">* </span>Email address</label>
+  <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 </div>
-<button class="btn btn-lg btn-primary" type="submit">Submit</button>
+
+<div class="mb-3">
+  <label for="Phone" class="form-label">Phone Number</label>
+  <input type="tel" class="form-control" name="Phone" id="Phone" placeholder="Phone number">
+</div>
+
+<div class="mb-3">
+  <label for="randomtext" class="form-label">Your Message</label>
+  <textarea class="form-control" name="randomtext" id="randomtext" rows="3" placeholder="Your Message"></textarea>
+</div>
+
+<div class="mb-3">
+  <label for="formFile" class="form-label">Attach a file</label>
+  <input class="form-control" type="file" id="formFile">
+</div>
+
+<div class="col-12">
+ 	<div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        <span style="color: red">* </span>Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+	</div>
+</div>
+
+<button style="margin-top:10px;" class="btn btn-lg btn-primary" type="submit">Submit</button>
 </form>
 
 <main id="skip">
